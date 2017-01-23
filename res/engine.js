@@ -18,7 +18,7 @@ function writer(){
   $("#main .simplefile").html('<kbd>10</kbd> Simple File <span class="badge">'+files+'</span>');
   $("#main .metallathe").html('<kbd>100</kbd> Metal Lathe <span class="badge">'+lathes+'</span>');
   $("#main .cnc").html('<kbd>1K</kbd> CNC <span class="badge">'+cncs+'</span>');
-  $("#main .waterjet").html('<kbd>500K</kbd> WaterJet <span class="badge">'+waterjets+'</span>');
+  $("#main .waterjet").html('<kbd>100K</kbd> WaterJet <span class="badge">'+waterjets+'</span>');
   var rounded=Math.round(gears);
   if(rounded<999){
     banksy('GEARS',rounded);
@@ -29,6 +29,7 @@ function writer(){
 }
 function banksy(text,number){
     $("#main .jtron").html('<i class="fa fa-cogs" aria-hidden="true"></i> '+number);
+    document.title= number + ' | GEARS · MACHINES · GUNS';
 }
 //Machine Availability
 var filebutton = document.getElementById("simple-file");
@@ -124,5 +125,5 @@ function cncing(){
   gears=gears+10;
 }
 function waterjetting(){
-  gears=gears+50;
+  gears=gears+20;
 }
