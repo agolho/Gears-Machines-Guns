@@ -2,8 +2,8 @@ var gears,machines,guns,files,lathes = new Number();
 gears=0,machines=0,guns = 0,files=0,lathes=0,cncs=0,waterjets=0;
 //These all were dutluk, next time they will be using something delicious nomoomonomonom!
 //Initializing
-window.onload = function(){timing();};
-
+setInterval(numbermaster5k, 250);
+setInterval(purchaseable, 250);
 //Manual Churning
 $("#addonebtn").click(function(e){
   e.preventDefault();
@@ -29,6 +29,37 @@ function writer(){
 }
 function banksy(text,number){
     $("#main .jtron").html('<i class="fa fa-cogs" aria-hidden="true"></i> '+number);
+}
+//Machine Availability
+var filebutton = document.getElementById("simple-file");
+var lathebutton = document.getElementById("metal-lathe");
+var cncbutton = document.getElementById("cnc");
+var wjetbutton = document.getElementById("water-jet");
+function purchaseable(){
+  if (gears>=10){
+      filebutton.disabled = false;
+      }
+      else {
+        filebutton.disabled = true;
+      }
+  if (gears>=100){
+      lathebutton.disabled = false;
+      }
+      else {
+      lathebutton.disabled = true;
+      }
+  if (gears>=1000){
+      cncbutton.disabled = false;
+      }
+      else {
+        cncbutton.disabled = true;
+      }
+  if (gears>=100000){
+      wjetbutton.disabled = false;
+      }
+      else {
+      wjetbutton.disabled = true;
+      }
 }
 //Machine Purchase
 $("#simple-file").click(function(e){
@@ -57,9 +88,9 @@ $("#cnc").click(function(e){
 });
 $("#water-jet").click(function(e){
   e.preventDefault();
-  if (gears>=500000){
+  if (gears>=100000){
     waterjets++;
-    gears=gears-500000;
+    gears=gears-100000;
   }
   writer();
 });
